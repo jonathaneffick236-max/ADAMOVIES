@@ -1303,8 +1303,35 @@ app.use((error, req, res, next) => {
 
 /* ---------------- START ---------------- */
 
-app.listen(PORT, () => {
-  console.log(
-    `ADAMOVIES backend running on port ${PORT}`
-  );
+app.listen(
+                    PORT,
+                    "0.0.0.0",
+                    () => {
+
+                        console.log(
+                            `ADAMOVIES backend running on port ${PORT}`
+                        );
+
+                        console.log(
+                            "ADAMOVIES database schema: adamovies"
+                        );
+
+                    }
+                );
+
+            } catch (error) {
+
+                console.error(
+                    "FAILED TO START SERVER:",
+                    error
+                );
+
+                process.exit(1);
+
+            }
+
+        }
+
+
+        startServer();
 });
