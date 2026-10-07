@@ -1301,9 +1301,18 @@ app.use((error, req, res, next) => {
   });
 });
 
-/* ---------------- START ---------------- */
+=====================================================
+           START SERVER
+        ===================================================== */
 
-app.listen(
+        async function startServer() {
+
+            try {
+
+                await initializeDatabase();
+
+
+                app.listen(
                     PORT,
                     "0.0.0.0",
                     () => {
@@ -1334,4 +1343,3 @@ app.listen(
 
 
         startServer();
-});
